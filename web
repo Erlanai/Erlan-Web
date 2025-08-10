@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Erlan AI — Automatización y Agentes IA para negocios</title>
+  <meta name="description" content="Erlan AI automatiza tu negocio con agentes IA, chatbots y flujos que ahorran tiempo y multiplican ingresos. Demo gratis y propuesta en 24h." />
+  <meta name="keywords" content="agencia IA, agentes IA, automatización, chatbots WhatsApp, n8n, Make, negocios locales, clínicas, inmobiliarias" />
+  <meta property="og:title" content="Erlan AI — Automatización y Agentes IA" />
+  <meta property="og:description" content="Automatizamos tu negocio con IA: menos tareas, más ventas. Demo gratis + propuesta en 24h." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://erlanaiagency.com/" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Erlan+AI" />
+  <link rel="icon" href="logo-erlan.png"><text y='0.9em' font-size='90'>🧠</text></svg>">
+  <style>
+    :root{
+      --bg:#0b0c10;/* un poco más profundo que #0f0f0f */
+      --card:#111319;
+      --muted:#9aa3b2;
+      --text:#eef2f7;
+      --primary:#1EA7FF; /* azul vivo */ /* cian */
+      --primary-2:#0052FF; /* azulón profundo */ /* azul eléctrico */
+      --grad: linear-gradient(135deg,var(--primary) 0%, var(--primary-2) 100%);
+      --radius:20px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 700px at 80% -10%,rgba(106,92,255,.18),transparent),radial-gradient(800px 500px at -10% 20%,rgba(57,198,255,.15),transparent),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px,92vw);margin-inline:auto}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.15rem;border-radius:999px;background:var(--grad);color:#fff;font-weight:600;box-shadow:var(--shadow);border:0;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.12)}
+    .btn.small{padding:.65rem .9rem;font-size:.95rem}
+
+    /* NAV */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(10px);background:rgba(11,12,16,.6);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+    .brand{display:flex;align-items:center;gap:.7rem}
+    .logo{width:40px;height:40px;object-fit:contain;display:block;border-radius:0;box-shadow:none;background:transparent}
+    .logo b{font-weight:800}
+    .nav a{opacity:.9}
+    .nav ul{list-style:none;display:flex;align-items:center;gap:1.2rem;margin:0;padding:0}
+    .mobile-toggle{display:none}
+
+    /* HERO */
+    .hero{padding:80px 0 30px;position:relative}
+    .hero-grid{display:grid;grid-template-columns: 1.1fr .9fr;gap:2.5rem;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted);font-size:.88rem}
+    .title{font-size: clamp(2rem, 3.8vw, 3.4rem);line-height:1.08;margin:.4rem 0 .6rem}
+    .title strong{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sub{font-size: clamp(1rem,1.6vw,1.2rem);color:#c8d0db;max-width:54ch}
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+    .hero .mock{background:radial-gradient(600px 300px at 30% 10%,rgba(106,92,255,.25),transparent),radial-gradient(600px 300px at 70% 80%,rgba(57,198,255,.28),transparent),#0d1016;border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+    .hero .screen{height:420px;border-radius:14px;background:#0b0e14;display:grid;place-items:center;border:1px solid rgba(255,255,255,.06)}
+    .hero .badge{position:absolute;right:6%;top:12%;background:#0c0f15;border:1px solid rgba(255,255,255,.08);padding:.7rem 1rem;border-radius:14px;box-shadow:var(--shadow)}
+
+    /* TRUST */
+    .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:30px 0 10px}
+    .trust .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1rem 1.2rem;color:#cbd3df;text-align:center}
+
+    /* BENEFITS */
+    section{padding:60px 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:1.2rem;box-shadow:var(--shadow)}
+    .icon{width:42px;height:42px;border-radius:12px;background:var(--grad);display:grid;place-items:center;margin-bottom:.8rem}
+    .muted{color:var(--muted)}
+
+    /* SERVICES */
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+
+    /* USE CASES */
+    .chips{display:flex;flex-wrap:wrap;gap:.6rem}
+    .chip{padding:.5rem .8rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:#cbd3df}
+
+    /* OFFER */
+    .offer{display:grid;grid-template-columns:1.4fr .6fr;gap:1.2rem;align-items:center}
+    .offer .panel{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);padding:1.2rem;border-radius:18px}
+
+    /* FORM */
+    form{display:grid;gap:.8rem}
+    input, textarea{width:100%;padding:.9rem 1rem;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0f1219;color:#e9eef6}
+    textarea{min-height:120px;resize:vertical}
+
+    /* FOOTER */
+    footer{padding:40px 0;border-top:1px solid rgba(255,255,255,.06);color:#aab4c2}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:1.2rem}
+    .subtle{font-size:.92rem;color:#9aa3b2}
+
+    /* WHATSAPP FLOAT */
+    .wa{position:fixed;right:16px;bottom:16px;z-index:60}
+    .wa a{display:inline-flex;align-items:center;gap:.6rem;background:#25D366;color:#0b0c10;padding:.9rem 1rem;border-radius:999px;font-weight:700;box-shadow:0 10px 25px rgba(37,211,102,.35)}
+
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .offer{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .trust{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr}
+      .mobile-toggle{display:inline-flex}
+      .nav ul{display:none}
+      .nav.open ul{display:flex;flex-direction:column;align-items:flex-start;gap:.9rem;padding:1rem;background:#0c0f15;border:1px solid rgba(255,255,255,.08);border-radius:14px;position:absolute;top:60px;right:4vw;width:min(92vw,340px)}
+    }
+
+    /* REVEAL animations */
+    .reveal{opacity:0;transform:translateY(18px);transition:all .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Erlan AI",
+    "url":"https://erlanaiagency.com/",
+    "logo":"https://via.placeholder.com/512x512.png?text=Erlan+AI",
+    "sameAs":[],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "info@erlanaiagency.com",
+      "telephone": "+34645537030"
+    }]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav" id="nav">
+      <a href="#" class="brand">
+        <img class="logo" src="logo-erlan.png" alt="Erlan AI logo" />
+        <div>
+          <strong>Erlan AI</strong><br/>
+          <span class="subtle">Automatización & Agentes IA</span>
+        </div>
+      </a>
+      <button class="btn small mobile-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+      <ul>
+        <li><a href="#benefits">Beneficios</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#usecases">Casos de uso</a></li>
+        <li><a href="#offer">Oferta</a></li>
+        <li><a href="#contact" class="btn small">Solicita tu demo</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Demo gratis + propuesta en 24h</div>
+          <h1 class="title">Automatizamos tu negocio con <strong>Agentes IA</strong> y flujos que <strong>ahorran tiempo</strong> y <strong>multiplican ingresos</strong>.</h1>
+          <p class="sub">Implementamos chatbots en WhatsApp y web, agentes IA para atención al cliente y automatizaciones operativas (CRM/ERP) en días, no meses.</p>
+          <div class="hero-ctas">
+            <a class="btn" href="#contact">Solicita tu Demo Gratis</a>
+            <a class="btn secondary" href="mailto:info@erlanaiagency.com">Escríbenos</a>
+          </div>
+        </div>
+        <div>
+          <div class="mock">
+            <div class="screen">
+              <!-- Placeholder de mockup 3D / dashboard -->
+              <img alt="Mockup Agente IA" src="https://via.placeholder.com/900x420.png?text=Agente+IA+%E2%80%94+Demo" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="badge">⚡ Implementación típica: 5–10 días</div>
+      <div class="container trust">
+        <div class="card">Integración con WhatsApp Business API</div>
+        <div class="card">Conectores: n8n • Make • Zapier</div>
+        <div class="card">CRMs: HubSpot • Pipedrive • Zoho</div>
+        <div class="card">Infra IA: OpenAI • Anthropic • Gemini</div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section id="benefits">
+      <div class="container">
+        <h2 class="title reveal">Resultados que notarás en semanas</h2>
+        <p class="sub reveal">Menos tickets repetidos, más leads atendidos y procesos sin fricción.</p>
+        <div class="grid-3" style="margin-top:1rem">
+          <div class="card reveal">
+            <div class="icon">💬</div>
+            <h3>Atención 24/7</h3>
+            <p class="muted">Respuestas instantáneas en WhatsApp y web. Deriva a humano solo cuando aporta valor.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">🧩</div>
+            <h3>Integrado a tu stack</h3>
+            <p class="muted">Conectado a CRM, calendarios, pagos y tu base de conocimiento. Todo sincronizado.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">📈</div>
+            <h3>Más ventas, menos tareas</h3>
+            <p class="muted">Cualificación automática, seguimiento y cierre asistido. Automatizaciones que escalan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <h2 class="title reveal">Servicios</h2>
+        <div class="grid-2" style="margin-top:1rem">
+          <div class="card reveal">
+            <h3>Agentes IA personalizados</h3>
+            <p class="muted">Bots conversacionales entrenados con tus FAQs, catálogo y tono de marca. Escalan soporte y captación.</p>
+            <ul class="muted">
+              <li>WhatsApp, web y redes sociales</li>
+              <li>Rutas a humano + registro en CRM</li>
+              <li>Métricas: tasa de resolución y CSAT</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Automatización de procesos</h3>
+            <p class="muted">Flujos en n8n/Make: captación, cualificación, agenda, recordatorios y postventa.</p>
+            <ul class="muted">
+              <li>Integraciones con CRM/ERP/Calendarios</li>
+              <li>Notificaciones y reporting</li>
+              <li>Auditoría de procesos + roadmap</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Chatbots con WhatsApp</h3>
+            <p class="muted">Conversión directa: leads atendidos en minutos, pagos, reservas y seguimiento.</p>
+            <ul class="muted">
+              <li>360dialog / WhatsApp Business API</li>
+              <li>Plantillas HSM y flujos guiados</li>
+              <li>Panel de control y handoff a agente</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Integración IA en tu stack</h3>
+            <p class="muted">Desde RAG con tus documentos a asistentes internos para tu equipo comercial.</p>
+            <ul class="muted">
+              <li>Conectores a bases de datos y nubes</li>
+              <li>Privacidad y cumplimiento</li>
+              <li>Entrenamiento y soporte</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section id="usecases">
+      <div class="container">
+        <h2 class="title reveal">Casos de uso por sector</h2>
+        <p class="sub reveal">Ejemplos reales que entregamos a menudo.</p>
+        <div class="grid-3" style="margin-top:1rem">
+          <div class="card reveal">
+            <h3>Clínicas</h3>
+            <div class="chips">
+              <span class="chip">Citas y recordatorios</span>
+              <span class="chip">Pre-cualificación</span>
+              <span class="chip">Seguimiento post-tratamiento</span>
+            </div>
+          </div>
+          <div class="card reveal">
+            <h3>Inmobiliarias</h3>
+            <div class="chips">
+              <span class="chip">Cualificación de leads</span>
+              <span class="chip">Agenda de visitas</span>
+              <span class="chip">Envío de fichas y filtros</span>
+            </div>
+          </div>
+          <div class="card reveal">
+            <h3>Gimnasios</h3>
+            <div class="chips">
+              <span class="chip">Altas automáticas</span>
+              <span class="chip">Renovaciones</span>
+              <span class="chip">Soporte horarios</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF / TESTIMONIOS -->
+    <section>
+      <div class="container">
+        <h2 class="title reveal">Lo que dicen los clientes</h2>
+        <div class="grid-3" style="margin-top:1rem">
+          <div class="card reveal">
+            <p>“En 3 semanas, WhatsApp se convirtió en nuestro mejor canal de ventas. El bot cualifica y agenda solo.”</p>
+            <p class="muted">— <strong>María G.</strong>, Clínica Dermo (placeholder)</p>
+          </div>
+          <div class="card reveal">
+            <p>“Pasamos de tardar horas a minutos en responder. Subió la conversión y bajó el soporte repetitivo.”</p>
+            <p class="muted">— <strong>Carlos R.</strong>, Inmobiliaria Nova (placeholder)</p>
+          </div>
+          <div class="card reveal">
+            <p>“La integración con HubSpot y el calendario nos ahorra un día a la semana por persona.”</p>
+            <p class="muted">— <strong>Lucía P.</strong>, Gym360 (placeholder)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section id="offer">
+      <div class="container offer">
+        <div class="panel reveal">
+          <h2 class="title" style="margin:0">Oferta de lanzamiento</h2>
+          <p class="sub">Contrata este mes y obtén <strong>20% de descuento</strong> en la implementación. Incluye auditoría de procesos y blueprint de automatización.</p>
+          <ul class="muted">
+            <li>Demo funcional en 48–72h</li>
+            <li>Roadmap de 30–60–90 días</li>
+            <li>Formación al equipo</li>
+          </ul>
+          <a class="btn" href="#contact">Quiero mi propuesta</a>
+        </div>
+        <div class="panel reveal">
+          <img src="https://via.placeholder.com/600x500.png?text=Dashboard+%2F+M%C3%A9tricas" alt="Dashboard métricas"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="title reveal">Pide tu demo</h2>
+        <p class="sub reveal">Cuéntanos tu caso. Te enviaremos una propuesta personalizada en 24h.</p>
+        <div class="grid-2" style="margin-top:1rem">
+          <div class="card reveal">
+            <form id="leadForm">
+              <input required name="name" placeholder="Nombre*" />
+              <input required name="email" type="email" placeholder="Email*" />
+              <input name="phone" placeholder="Teléfono (opcional)" />
+              <textarea name="message" placeholder="¿Qué necesitas automatizar?"></textarea>
+              <label class="subtle"><input type="checkbox" required /> Acepto la <a href="#" target="_blank">política de privacidad</a>.</label>
+              <button class="btn" type="submit">Recibir propuesta</button>
+              <p id="formMsg" class="muted" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="card reveal">
+            <h3>Contacto</h3>
+            <p class="muted">Email: <a href="mailto:info@erlanaiagency.com">info@erlanaiagency.com</a><br>WhatsApp: <a href="https://wa.me/34645537030" target="_blank">+34 645 53 70 30</a></p>
+            <p class="muted">Horario: L–V 9:00–18:00 CET</p>
+            <p class="muted">Madrid, España</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img class="logo" src="logo-erlan.png" alt="Erlan AI logo" />
+          <div>
+            <strong>Erlan AI</strong><br/>
+            <span class="subtle">Automatización con IA para crecer sin fricción</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul style="list-style:none;padding:0;margin:0" class="subtle">
+          <li><a href="#" target="_blank">Aviso legal</a></li>
+          <li><a href="#" target="_blank">Política de privacidad</a></li>
+          <li><a href="#" target="_blank">Política de cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Redes</h4>
+        <ul style="list-style:none;padding:0;margin:0" class="subtle">
+          <li><a href="#" target="_blank">Instagram</a></li>
+          <li><a href="#" target="_blank">LinkedIn</a></li>
+          <li><a href="#" target="_blank">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top:18px">
+      <p class="subtle">© <span id="year"></span> Erlan AI. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <div class="wa">
+    <a href="https://wa.me/34645537030?text=Hola%20Erlan%20AI%2C%20quiero%20una%20demo" target="_blank" aria-label="WhatsApp">
+      <span>WhatsApp</span>
+    </a>
+  </div>
+
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú móvil
+    function toggleMenu(){
+      document.getElementById('nav').classList.toggle('open');
+    }
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    // Form handler (frontend-only). Sustituir por tu endpoint real si quieres enviar.
+    const form = document.getElementById('leadForm');
+    const msg = document.getElementById('formMsg');
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      msg.textContent = 'Enviando...';
+      try{
+        // TODO: reemplazar por un fetch a tu backend / make / n8n
+        await new Promise(r=>setTimeout(r,900));
+        msg.textContent = 'Listo. Te escribimos en menos de 24h.';
+        form.reset();
+      }catch(err){
+        msg.textContent = 'Error al enviar. Intenta de nuevo.';
+      }
+    });
+  </script>
+</body>
+</html>
