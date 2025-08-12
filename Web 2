@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Erlan - Agentes de Voz IA para Clínicas Locales</title>
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    color: #333;
+    line-height: 1.6;
+  }
+  a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  /* Container */
+  .container {
+    max-width: 960px;
+    padding: 20px 15px;
+    margin: auto;
+  }
+  header {
+    background-color: #005685;
+    color: #fff;
+    padding: 30px 15px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.9rem;
+    letter-spacing: 1.5px;
+  }
+  header p {
+    margin: 8px 0 0;
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+  /* Section Titles */
+  h2 {
+    color: #005685;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.6rem;
+    border-bottom: 3px solid #007BFF;
+    padding-bottom: 5px;
+  }
+
+  /* Cards styling */
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    padding: 20px;
+  }
+  .highlight {
+    color: #007BFF;
+    font-weight: 600;
+  }
+
+  ul {
+    padding-left: 1.2rem;
+  }
+  ul li {
+    margin-bottom: 8px;
+  }
+
+  /* Button */
+  .btn-primary {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    padding: 30px 15px;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+    }
+    .container {
+      padding: 15px 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <h1>Erlan</h1>
+  <p>Recepcionista Virtual 24/7 para Clínicas Locales con Agente de Voz Inteligente</p>
+</header>
+
+<main class="container" role="main">
+
+  <section aria-labelledby="que-es">
+    <h2 id="que-es">¿Qué es Erlan?</h2>
+    <div class="card">
+      <p><strong>Erlan</strong> es una agencia especializada en <span class="highlight">automatización inteligente</span> para clínicas locales en Pozuelo de Alarcón. Implementamos <em>agentes de voz tipo recepcionista</em> impulsados por IA, que gestionan la atención de llamadas y citas de forma natural y eficiente, disponibles 24/7.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="beneficios">
+    <h2 id="beneficios">Beneficios para su clínica</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Gestión automática de reservas, confirmaciones y cancelaciones</strong> sin intervención humana.</li>
+        <li><strong>Reducción de cancelaciones y ausencias hasta en 30%</strong> gracias a recordatorios por llamadas automatizadas.</li>
+        <li><strong>Libera al personal de tareas repetitivas</strong>, permitiendo enfocarse en la atención médica.</li>
+        <li><strong>Atención telefónica 24/7</strong> sin saturar el equipo humano.</li>
+        <li><strong>Integración sencilla</strong> con sus sistemas de agenda, CRM y plataformas de comunicación.</li>
+        <li><strong>Mejora la experiencia y fidelización</strong> de sus pacientes con atención personalizada y cercana.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="como-funciona">
+    <h2 id="como-funciona">¿Cómo funciona Erlan?</h2>
+    <div class="card">
+      <ol>
+        <li>El paciente llama o solicita una cita.</li>
+        <li>El agente de voz responde y gestiona reservas, cambios o cancelaciones.</li>
+        <li>Las citas se registran automáticamente en el sistema.</li>
+        <li>Se envían recordatorios automáticos para reducir olvidos.</li>
+        <li>Los pacientes pueden responder para confirmar o cambiar su cita fácilmente.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section aria-labelledby="propuesta-economica">
+    <h2 id="propuesta-economica">Propuesta económica</h2>
+    <div class="card">
+      <p><strong>Pago único de implementación:</strong> 1.000€</p>
+      <p><strong>Mantenimiento mensual:</strong> 200€</p>
+      <p>Este modelo incluye todo: desarrollo, integración, personalización, soporte técnico y actualizaciones continuas, con un margen garantizado para Erlan.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="demo">
+    <h2 id="demo">Demo en acción</h2>
+    <div class="card">
+      <p>Durante la demo mostramos cómo:</p>
+      <ul>
+        <li>Un paciente solicita una cita y el agente responde automáticamente.</li>
+        <li>La cita se confirma y se registra en el calendario de la clínica.</li>
+        <li>Se envían recordatorios vía WhatsApp o llamada automatizada.</li>
+        <li>El paciente puede responder para confirmar, cancelar o reprogramar sin llamadas.</li>
+      </ul>
+      <button class="btn-primary" onclick="alert('Demo solicitada: contactar con Erlan para coordinar una demo personalizada en vivo')">Solicitar Demo</button>
+    </div>
+  </section>
+
+  <section aria-labelledby="contacto">
+    <h2 id="contacto">Contacto</h2>
+    <div class="card">
+      <p>¿Interesado en transformar su clínica con Erlan?</p>
+      <p>Envía un correo a <a href="mailto:contacto@erlan.io">contacto@erlan.io</a> o llama al <a href="tel:+34600111222">+34 600 111 222</a>.</p>
+      <p>Estamos listos para ayudarte a mejorar la eficiencia y la satisfacción de tus pacientes.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer role="contentinfo">
+  <p>© 2025 Erlan Agencia de Automatización. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
